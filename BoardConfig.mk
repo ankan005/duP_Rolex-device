@@ -49,7 +49,7 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8917
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+#BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
@@ -192,8 +192,8 @@ HWUI_COMPILE_FOR_PERF := true
 TARGET_PROVIDES_KEYMASTER := true
 
 # Lineage Hardware
-BOARD_HARDWARE_CLASS += \
-    $(DEVICE_PATH)/lineagehw
+#BOARD_HARDWARE_CLASS += \
+#    $(DEVICE_PATH)/lineagehw
 
 # Tap2Wake
 TARGET_TAP_TO_WAKE_NODE := "/proc/gesture/onoff"

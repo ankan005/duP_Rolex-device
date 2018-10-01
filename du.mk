@@ -14,17 +14,27 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/xiaomi/rolex
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit from rolex device
-$(call inherit-product, device/xiaomi/rolex/device.mk)
+# Inherit some common LineageOS stuff.
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
-# Device identifier. This must come after all inclusions
-TARGET_VENDOR := Xiaomi
-PRODUCT_DEVICE := rolex
-PRODUCT_NAME := full_rolex
+PRODUCT_NAME := du_rolex
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi 4A
+PRODUCT_DEVICE := rolex
 PRODUCT_MANUFACTURER := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_VENDOR_PRODUCT_NAME := rolex
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="rolex-user 7.1.2 N2G47H V9.2.6.0.NCCMIEK release-keys"
+
+# Set BUILD_FINGERPRINT variable
+BUILD_FINGERPRINT := "Xiaomi/rolex/rolex:7.1.2/N2G47H/V9.2.6.0.NCCMIEK:user/release-keys"
+
